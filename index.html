@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priyanshi's Ultra Modern Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #f0f4ff;
+      --text: #1a1a2e;
+      --accent: #7b2ff7;
+      --gradient: linear-gradient(135deg, #7b2ff7, #f953c6);
+      --card-bg: #ffffff;
+      --dark-bg: #0f0f0f;
+      --dark-text: #e0e0e0;
+      --dark-card: #1a1a1a;
+    }
+
+    [data-theme="dark"] {
+      --bg: var(--dark-bg);
+      --text: var(--dark-text);
+      --card-bg: var(--dark-card);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background: var(--card-bg);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    header h1 {
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--text);
+    }
+
+    .toggle-btn:hover {
+      color: var(--accent);
+      transform: scale(1.2);
+      transition: all 0.3s ease;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 3rem;
+      background: var(--gradient);
+      color: white;
+      border-bottom-left-radius: 3rem;
+      border-bottom-right-radius: 3rem;
+    }
+
+ 
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: 1.2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background: var(--card-bg);
+      color: var(--text);
+    }
+
+    .contact-form button {
+      padding: 1rem;
+      border: none;
+      background: var(--gradient);
+      color: white;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card-bg);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Priyanshi</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="toggle-btn" onclick="toggleTheme()">
+    <i id="theme-icon" class="fas fa-moon"></i>
+  </div>
+</header>
+
+<div class="hero">
+  <h2>Priyanshi Sah</h2>
+  <p>🌟 Visionary Thinker | Student Coder | Artist | Future Leader</p>
+</div>
+
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p style="text-align: center; max-width: 800px; margin: auto;">
+    Hello! I’m Priyanshi, a class 9 student with a passion for design, development, and turning creativity into real-world ideas. I love combining art with tech, whether through Python apps or visual design. I believe in building a bright future with curiosity and courage.
+  </p>
+</section>
+
+<section id="skills" class="section">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">🖥️ Web Design (HTML/CSS/JS)</div>
+    <div class="card">🐍 Python + Pygame Apps</div>
+    <div class="card">🎨 Digital & Traditional Art</div>
+    <div class="card">📊 AI, Chatbots & n8n Flows</div>
+    <div class="card">🧠 Creativity & Leadership</div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <h2>My Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <strong>🎨 Paint 3D Lite</strong><br />
+      Python drawing app made more interactive and beautiful.
+    </div>
+    <div class="card">
+      <strong>🤖 Smart n8n Chatbot</strong><br />
+      An automated bot that uses Google Sheets to respond.
+    </div>
+    <div class="card">
+      <strong>🌸 Glow-up Planner</strong><br />
+      A personal goal tracker for skincare, habits, and positivity.
+    </div>
+    <div class="card">
+      <strong>📚 BLE Study Scheduler</strong><br />
+      Timetable + subjects + smart revision flow made in HTML.
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Message sent.')">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="5" placeholder="Your Message..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Priyanshi Sah | Crafted with 💜</p>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const root = document.documentElement;
+    const icon = document.getElementById('theme-icon');
+    const dark = root.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      root.removeAttribute('data-theme');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+  }
+</script>
+
+</body>
+</html>
